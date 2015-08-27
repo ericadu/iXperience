@@ -1,0 +1,11 @@
+<h1><%= @expenditure.name %></h1>
+<p>
+  Date: <%= @expenditure.purchase_date.to_date %><br>
+  Price: R<%= @expenditure.price %><br>
+  Quantity: <%= @expenditure.quantity %><br>
+</p>
+<center>
+  <%= image_tag @expenditure.image.url(:medium) %><br><br>
+</center>
+
+<%= link_to 'back', user_expenditures_path(current_user) %>

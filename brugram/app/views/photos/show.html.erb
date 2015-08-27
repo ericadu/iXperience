@@ -1,0 +1,18 @@
+<div class="extra-padding">
+  <%= image_tag @photo.image.url %>
+  <p><%= @photo.caption %></p>
+</div>
+
+<h4>Hashtags</h4>
+<% @photo.hashtags.each do |hashtag| %>
+  <%= link_to hashtag.text, hashtag_path(hashtag) %><br>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to 'edit', edit_photo_path(@photo) %><br>
+
+<%= link_to 'delete', photo_path, method: :delete, data: {confirm: 'Are you sure?'} %><br>
+
+<%= link_to 'back to photos', photos_path %>

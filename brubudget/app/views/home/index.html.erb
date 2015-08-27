@@ -1,0 +1,4 @@
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% if current_user %>
+  <h1><%= link_to "My Expenditures", user_expenditures_path(current_user) %></h1>
+<% end %>

@@ -1,0 +1,16 @@
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+
+
+<div id='map'></div>
+
+<script>
+  L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY2FkdSIsImEiOiJkY2ZmM2RkZjY4ODIwYjY3MzdmOWJkNzE3NTkyNTMzOCJ9.nonlKEMZcKO2xqgaclisOQ';
+  var map = L.mapbox.map('map', 'ericadu.mla8f348')
+      .setView([-30, 20], 5);
+
+
+  var myLocations = L.mapbox.featureLayer()
+          .loadURL('/places.json')
+          .addTo(map)
+</script>

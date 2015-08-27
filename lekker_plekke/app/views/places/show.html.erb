@@ -1,0 +1,34 @@
+<h1><%= @place.name %></h1>
+<h3>Address: <%= @place.address %></h3>
+<%= link_to 'like', like_place_path, class: "btn btn-default inline" %> <%= @place.likes %>
+<br>
+  <center><img height="200px" width="200px" src= <%= @place.image %>></center>
+<br>
+<p>
+  <%= @place.description %>
+</p>
+<p>
+  I give this place <%= @place.rating %> out of 5 stars.
+</p>
+
+<%= link_to 'back', places_path %>
+<%= link_to 'edit', edit_place_path %>
+<%= link_to 'delete', place_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<br>
+<br>
+
+
+<table class="comments-list table">
+  <tr>
+    <th class="col-sm-3">
+      Name
+    </th>
+    <th>
+      Comment
+    </th>
+  </tr>
+  <%= render @place.comments %>
+</table>
+<br>
+<%= render 'comments/form' %><br>
